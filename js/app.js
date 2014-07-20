@@ -15,10 +15,13 @@ function setup() {
   var orientDeltaAlpha = document.getElementById("orientation-delta-alpha");
   var orientDeltaBeta = document.getElementById("orientation-delta-beta");
   var orientDeltaGamma = document.getElementById("orientation-delta-gamma");
+  var turnsText = document.getElementById("turns");
 
   var prevAlpha, deltaAlpha = 0;
   var prevBeta, deltaBeta = 0;
   var prevGamma, deltaGamma = 0;
+
+  var turns = 0;
 
   handleMotion = function(dmEvent){
     if (dmEvent.acceleration.x !== null) {
@@ -61,6 +64,11 @@ function setup() {
     prevAlpha = alpha;
     prevBeta = beta;
     prevGamma = gamma;
+    if (orientDeltaAlpha / 360 > 1) {
+      orientDeltaAlpha = orienteDeltaAlpha % 360;
+      turns += 1;
+      turnsText.innerHTML = turns;
+    }
   };
 
   window.addEventListener("devicemotion", handleMotion, true);
