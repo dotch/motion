@@ -8,14 +8,12 @@ function setup() {
   var accelGravX = document.getElementById("acceleration-incl-gravity-x");
   var accelGravY = document.getElementById("acceleration-incl-gravity-y");
   var accelGravZ = document.getElementById("acceleration-incl-gravity-z");
-
-
+  var orientAbs = document.getElementById("orientation-absolute");
+  var orientAlpha = document.getElementById("orientation-alpha");
+  var orientBeta = document.getElementById("orientation-beta");
+  var orientGamma = document.getElementById("orientation-gamma");
 
   handleMotion = function(dmEvent){
-
-    console.log(dmEvent.acceleration);
-
-    // display values
     if (dmEvent.acceleration.x !== null) {
       accelX.innerHTML = dmEvent.acceleration.x.toFixed(3);
       accelY.innerHTML = dmEvent.acceleration.y.toFixed(3);
@@ -28,7 +26,18 @@ function setup() {
     }
   };
 
+  hanldeOrientation = function(mEvent){
+    if (mEvent.absolute !== null) {
+      orientAbs.innerHTML = mEvent.absolute.toFixed(3);
+      orientAlpha.innerHTML = mEvent.alpha.toFixed(3);
+      orientBeta.innerHTML = mEvent.beta.toFixed(3);
+      orientGamma.innerHTML = mEvent.gamma.toFixed(3);
+    }
+  };
+
   window.addEventListener("devicemotion", handleMotion, true);
+  window.addEventListener("deviceorientation", handleMotion, true);
+
 }
 
 
