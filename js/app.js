@@ -43,6 +43,7 @@ function setup() {
     orientGamma.innerHTML = gamma.toFixed(3);
     if (prevAlpha !== undefined) {
       deltaAlpha += alpha - prevAlpha;
+      console.log(deltaAlpha);
       deltaBeta += beta - prevBeta;
       deltaGamma += gamma - prevGamma;
       orientDeltaAlpha.innerHTML = deltaAlpha;
