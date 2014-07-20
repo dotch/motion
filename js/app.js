@@ -51,7 +51,7 @@ function setup() {
     }
     prevAlpha = alpha;
     prevBeta = beta;
-    prevDelta = delta;
+    prevGamma = gamma;
   };
 
   window.addEventListener("devicemotion", handleMotion, true);
