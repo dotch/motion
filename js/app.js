@@ -16,9 +16,9 @@ function setup() {
   var orientDeltaBeta = document.getElementById("orientation-delta-beta");
   var orientDeltaGamma = document.getElementById("orientation-delta-gamma");
 
-  var prevAlpha, deltaAlpha;
-  var prevBeta, deltaBeta;
-  var prevGamma, deltaGamma;
+  var prevAlpha, deltaAlpha = 0;
+  var prevBeta, deltaBeta = 0;
+  var prevGamma, deltaGamma = 0;
 
   handleMotion = function(dmEvent){
     if (dmEvent.acceleration.x !== null) {
