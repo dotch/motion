@@ -26,7 +26,7 @@ function setup() {
     }
   };
 
-  hanldeOrientation = function(mEvent){
+  handleOrientation = function(mEvent){
     if (mEvent.absolute !== null) {
       orientAbs.innerHTML = mEvent.absolute.toFixed(3);
       orientAlpha.innerHTML = mEvent.alpha.toFixed(3);
