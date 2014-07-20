@@ -33,6 +33,15 @@ function setup() {
     }
   };
 
+  function calcDelta(newVal, oldVal) {
+    var angle = Math.abs(newVal - oldVal) % 360;
+    if (angle < 180) {
+      return (newVal > oldVal) ? angle : -angle;
+    }  else {
+      return (newVal > oldVal) ? -(360 - angle) : (360 - angle);
+    }
+  }
+
   handleOrientation = function(mEvent){
     var alpha = mEvent.alpha;
     var beta = mEvent.beta;
@@ -42,9 +51,9 @@ function setup() {
     orientBeta.innerHTML = beta.toFixed(3);
     orientGamma.innerHTML = gamma.toFixed(3);
     if (prevAlpha !== undefined) {
-      deltaAlpha += Math.min(alpha - prevAlpha, alpha - prevAlpha + 360);
-      deltaBeta += beta - prevBeta;
-      deltaGamma += gamma - prevGamma;
+      deltaAlpha += calcDelta(alpha, prevAlpha);
+      deltaBeta += calcDelta(beta, prevBeta);
+      deltaGamma += calcDelta(gamma, prevGamma);
       orientDeltaAlpha.innerHTML = deltaAlpha;
       orientDeltaBeta.innerHTML = deltaBeta;
       orientDeltaGamma.innerHTML = deltaGamma;
