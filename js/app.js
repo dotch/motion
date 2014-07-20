@@ -64,8 +64,8 @@ function setup() {
     prevAlpha = alpha;
     prevBeta = beta;
     prevGamma = gamma;
-    if (orientDeltaAlpha / 360 > 1) {
-      orientDeltaAlpha = orienteDeltaAlpha % 360;
+    if (Math.abs(deltaAlpha) / 360 > 1) {
+      orientDeltaAlpha = deltaAlpha % 360;
       turns += 1;
       turnsText.innerHTML = turns;
     }
