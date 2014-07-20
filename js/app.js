@@ -78,7 +78,7 @@ function setup() {
     if (Math.abs(deltaGamma) / 360 > 1) {
       deltaGamma = deltaGamma % 360;
       rolls += 1;
-      rollsText.innerHTML = turns;
+      rollsText.innerHTML = rolls;
     }
 
   };
