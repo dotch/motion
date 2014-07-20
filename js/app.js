@@ -16,12 +16,12 @@ function setup() {
     console.log(dmEvent.acceleration);
 
     // display values
-    accelX.innerHTML = dmEvent.acceleration.x;
-    accelY.innerHTML = dmEvent.acceleration.y;
-    accelZ.innerHTML = dmEvent.acceleration.z;
-    accelGravX.innerHTML = dmEvent.accelerationIncludingGravity.x;
-    accelGravY.innerHTML = dmEvent.accelerationIncludingGravity.y;
-    accelGravZ.innerHTML = dmEvent.accelerationIncludingGravity.z;
+    accelX.innerHTML = dmEvent.acceleration.x.toFixed(3);
+    accelY.innerHTML = dmEvent.acceleration.y.toFixed(3);
+    accelZ.innerHTML = dmEvent.acceleration.z.toFixed(3);
+    accelGravX.innerHTML = dmEvent.accelerationIncludingGravity.x.toFixed(3);
+    accelGravY.innerHTML = dmEvent.accelerationIncludingGravity.y.toFixed(3);
+    accelGravZ.innerHTML = dmEvent.accelerationIncludingGravity.z.toFixed(3);
 
 
   };
