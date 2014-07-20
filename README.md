@@ -41,5 +41,7 @@ The iPhone supports both.
 The Gecko implementation of DeviceOrientationEvent has the property `absolute`, safaris webkit does not.
 
 `DeviceOrientationEvent.alpha` is identical with values from 0 to 360.
+
 `DeviceOrientationEvent.beta` has values between -90 and 90 on webkit, between 180 and -180 on gecko.
+
 `DeviceOrientationEvent.gamma` has values between -180 and 180 on webkit, between 90 and -90 on gecko.
