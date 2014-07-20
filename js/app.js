@@ -28,9 +28,9 @@ function setup() {
 
   handleOrientation = function(mEvent){
     orientAbs.innerHTML = mEvent.absolute;
-    orientAlpha.innerHTML = mEvent.alpha;
-    orientBeta.innerHTML = mEvent.beta;
-    orientGamma.innerHTML = mEvent.gamma;
+    orientAlpha.innerHTML = mEvent.alpha.toFixed(3);
+    orientBeta.innerHTML = mEvent.beta.toFixed(3);
+    orientGamma.innerHTML = mEvent.gamma.toFixed(3);
   };
 
   window.addEventListener("devicemotion", handleMotion, true);
