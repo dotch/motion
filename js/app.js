@@ -22,14 +22,14 @@ function setup() {
 
   handleMotion = function(dmEvent){
     if (dmEvent.acceleration.x !== null) {
-      accelX.innerHTML = dmEvent.acceleration.x.toFixed(3);
-      accelY.innerHTML = dmEvent.acceleration.y.toFixed(3);
-      accelZ.innerHTML = dmEvent.acceleration.z.toFixed(3);
+      accelX.innerHTML = dmEvent.acceleration.x.toFixed(2);
+      accelY.innerHTML = dmEvent.acceleration.y.toFixed(2);
+      accelZ.innerHTML = dmEvent.acceleration.z.toFixed(2);
     }
     if (dmEvent.accelerationIncludingGravity.x !== null) {
-      accelGravX.innerHTML = dmEvent.accelerationIncludingGravity.x.toFixed(3);
-      accelGravY.innerHTML = dmEvent.accelerationIncludingGravity.y.toFixed(3);
-      accelGravZ.innerHTML = dmEvent.accelerationIncludingGravity.z.toFixed(3);
+      accelGravX.innerHTML = dmEvent.accelerationIncludingGravity.x.toFixed(2);
+      accelGravY.innerHTML = dmEvent.accelerationIncludingGravity.y.toFixed(2);
+      accelGravZ.innerHTML = dmEvent.accelerationIncludingGravity.z.toFixed(2);
     }
   };
 
@@ -47,16 +47,16 @@ function setup() {
     var beta = mEvent.beta;
     var gamma = mEvent.gamma;
     orientAbs.innerHTML = mEvent.absolute;
-    orientAlpha.innerHTML = alpha.toFixed(3);
-    orientBeta.innerHTML = beta.toFixed(3);
-    orientGamma.innerHTML = gamma.toFixed(3);
+    orientAlpha.innerHTML = alpha.toFixed(2);
+    orientBeta.innerHTML = beta.toFixed(2);
+    orientGamma.innerHTML = gamma.toFixed(2);
     if (prevAlpha !== undefined) {
       deltaAlpha += calcDelta(alpha, prevAlpha);
       deltaBeta += calcDelta(beta, prevBeta);
       deltaGamma += calcDelta(gamma, prevGamma);
-      orientDeltaAlpha.innerHTML = deltaAlpha;
-      orientDeltaBeta.innerHTML = deltaBeta;
-      orientDeltaGamma.innerHTML = deltaGamma;
+      orientDeltaAlpha.innerHTML = deltaAlpha.toFixed(2);
+      orientDeltaBeta.innerHTML = deltaBeta.toFixed(2);
+      orientDeltaGamma.innerHTML = deltaGamma.toFixed(2);
     }
     prevAlpha = alpha;
     prevBeta = beta;
