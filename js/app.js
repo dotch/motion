@@ -27,12 +27,10 @@ function setup() {
   };
 
   handleOrientation = function(mEvent){
-    if (mEvent.absolute !== null) {
-      orientAbs.innerHTML = mEvent.absolute.toFixed(3);
-      orientAlpha.innerHTML = mEvent.alpha.toFixed(3);
-      orientBeta.innerHTML = mEvent.beta.toFixed(3);
-      orientGamma.innerHTML = mEvent.gamma.toFixed(3);
-    }
+    orientAbs.innerHTML = "a";
+    orientAlpha.innerHTML = mEvent.alpha.toFixed(3);
+    orientBeta.innerHTML = mEvent.beta.toFixed(3);
+    orientGamma.innerHTML = mEvent.gamma.toFixed(3);
   };
 
   window.addEventListener("devicemotion", handleMotion, true);
