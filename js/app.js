@@ -12,6 +12,13 @@ function setup() {
   var orientAlpha = document.getElementById("orientation-alpha");
   var orientBeta = document.getElementById("orientation-beta");
   var orientGamma = document.getElementById("orientation-gamma");
+  var orientDeltaAlpha = document.getElementById("orientation-delta-alpha");
+  var orientDeltaBeta = document.getElementById("orientation-delta-beta");
+  var orientDeltaGamma = document.getElementById("orientation-delta-gamma");
+
+  var prevAlpha, deltaAlpha;
+  var prevBeta, deltaBeta;
+  var prevGamma, deltaGamma;
 
   handleMotion = function(dmEvent){
     if (dmEvent.acceleration.x !== null) {
@@ -27,10 +34,24 @@ function setup() {
   };
 
   handleOrientation = function(mEvent){
+    var alpha = mEvent.alpha;
+    var beta = mEvent.beta;
+    var gamma = mEvent.gamma;
     orientAbs.innerHTML = mEvent.absolute;
-    orientAlpha.innerHTML = mEvent.alpha.toFixed(3);
-    orientBeta.innerHTML = mEvent.beta.toFixed(3);
-    orientGamma.innerHTML = mEvent.gamma.toFixed(3);
+    orientAlpha.innerHTML = alpha.toFixed(3);
+    orientBeta.innerHTML = beta.toFixed(3);
+    orientGamma.innerHTML = gamma.toFixed(3);
+    if (prevAlpha !== undefined) {
+      deltaAlpha += alpha - prevAlpha;
+      deltaBeta += beta - prevBeta;
+      deltaGamma += delta - prevDelta;
+      orientDeltaAlpha.innerHTML = deltaAlpha;
+      orientDeltaBeta.innerHTML = deltaBeta;
+      orientDeltaGamma.innerHTML = deltaGamma;
+    }
+    prevAlpha = alpha;
+    prevBeta = beta;
+    prevDelta = delta;
   };
 
   window.addEventListener("devicemotion", handleMotion, true);
