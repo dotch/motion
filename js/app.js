@@ -16,12 +16,14 @@ function setup() {
   var orientDeltaBeta = document.getElementById("orientation-delta-beta");
   var orientDeltaGamma = document.getElementById("orientation-delta-gamma");
   var turnsText = document.getElementById("turns");
+  var rollsText = document.getElementById("rolls");
 
   var prevAlpha, deltaAlpha = 0;
   var prevBeta, deltaBeta = 0;
   var prevGamma, deltaGamma = 0;
 
   var turns = 0;
+  var rolls = 0;
 
   handleMotion = function(dmEvent){
     if (dmEvent.acceleration.x !== null) {
@@ -64,11 +66,21 @@ function setup() {
     prevAlpha = alpha;
     prevBeta = beta;
     prevGamma = gamma;
+
+    // check for turns
     if (Math.abs(deltaAlpha) / 360 > 1) {
       deltaAlpha = deltaAlpha % 360;
       turns += 1;
       turnsText.innerHTML = turns;
     }
+
+    // check for rolls
+    if (Math.abs(deltaGamma) / 360 > 1) {
+      deltaGamma = deltaGamma % 360;
+      rolls += 1;
+      rollsText.innerHTML = turns;
+    }
+
   };
 
   window.addEventListener("devicemotion", handleMotion, true);
