@@ -27,7 +27,7 @@ function setup() {
   };
 
   handleOrientation = function(mEvent){
-    orientAbs.innerHTML = "a";
+    orientAbs.innerHTML = mEvent.absolute.toFixed(3);
     orientAlpha.innerHTML = mEvent.alpha.toFixed(3);
     orientBeta.innerHTML = mEvent.beta.toFixed(3);
     orientGamma.innerHTML = mEvent.gamma.toFixed(3);
