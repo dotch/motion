@@ -51,7 +51,6 @@ function setup() {
     var alpha = mEvent.alpha;
     var beta = mEvent.beta;
     var gamma = mEvent.gamma;
-    orientAbs.innerHTML = mEvent.absolute;
     orientAlpha.innerHTML = alpha.toFixed(2);
     orientBeta.innerHTML = beta.toFixed(2);
     orientGamma.innerHTML = gamma.toFixed(2);
