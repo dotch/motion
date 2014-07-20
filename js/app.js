@@ -36,7 +36,7 @@ function setup() {
   };
 
   window.addEventListener("devicemotion", handleMotion, true);
-  window.addEventListener("deviceorientation", handleMotion, true);
+  window.addEventListener("deviceorientation", handleOrientation, true);
 
 }
 
