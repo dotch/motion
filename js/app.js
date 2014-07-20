@@ -44,7 +44,7 @@ function setup() {
     if (prevAlpha !== undefined) {
       deltaAlpha += alpha - prevAlpha;
       deltaBeta += beta - prevBeta;
-      deltaGamma += delta - prevDelta;
+      deltaGamma += gamma - prevGamma;
       orientDeltaAlpha.innerHTML = deltaAlpha;
       orientDeltaBeta.innerHTML = deltaBeta;
       orientDeltaGamma.innerHTML = deltaGamma;
