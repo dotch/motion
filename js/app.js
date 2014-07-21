@@ -8,6 +8,11 @@ function setup() {
   var accelGravX = document.getElementById("acceleration-incl-gravity-x");
   var accelGravY = document.getElementById("acceleration-incl-gravity-y");
   var accelGravZ = document.getElementById("acceleration-incl-gravity-z");
+  var rotationA = document.getElementById("rotation-a");
+  var rotationB = document.getElementById("rotation-b");
+  var rotationC = document.getElementById("rotation-c");
+  var interval = document.getElementById("interval");
+
   var orientAbs = document.getElementById("orientation-absolute");
   var orientAlpha = document.getElementById("orientation-alpha");
   var orientBeta = document.getElementById("orientation-beta");
@@ -26,6 +31,7 @@ function setup() {
   var rolls = 0;
 
   handleMotion = function(dmEvent){
+    console.log(dmEvent);
     if (dmEvent.acceleration.x !== null) {
       accelX.innerHTML = dmEvent.acceleration.x.toFixed(2);
       accelY.innerHTML = dmEvent.acceleration.y.toFixed(2);
@@ -36,6 +42,13 @@ function setup() {
       accelGravY.innerHTML = dmEvent.accelerationIncludingGravity.y.toFixed(2);
       accelGravZ.innerHTML = dmEvent.accelerationIncludingGravity.z.toFixed(2);
     }
+    if (dmEvent.rotationRate.alpha !== null) {
+      rotationA.innerHTML = dmEvent.rotationRate.alpha.toFixed(2);
+      rotationB.innerHTML = dmEvent.rotationRate.beta.toFixed(2);
+      rotationC.innerHTML = dmEvent.rotationRate.gamma.toFixed(2);
+    }
+    interval = dmEvent.interval;
+    
   };
 
   function calcDelta(newVal, oldVal) {
